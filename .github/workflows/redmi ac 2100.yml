@@ -103,10 +103,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt firmware xiaomi redmi ac2100
-        path: ${{ env.FIRMWARE }}
-
-    - name: Upload packages directory
-      uses: actions/upload-artifact@master
-      with:
-        name: OpenWrt_bin_packages
-        path: openwrt/bin/packages       
+        path: ${{ env.FIRMWARE }} 
