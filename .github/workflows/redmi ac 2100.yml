@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_Redmi_AC2100
+name: Build redmi ac2100
 
 on: 
   release:
@@ -72,8 +72,13 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-        
-    - name: Configuration Customization - Build_Redmi_AC2100
+    #- name: Import external feeds
+    #  working-directory: ./openwrt
+    #  run: |
+    #    git clone https://github.com/xiaorouji/openwrt-package.git package/lienol
+    #    git clone "your_github_link" package/"your_folder_name"      
+
+    - name: Configuration Customization - Build_x86_64
       env:
         CONFIG_FILE: 'redmi.config'
       run: |
@@ -97,5 +102,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware xiaomi redmi ac2100
+        name: OpenWrt redmi ac2100
         path: openwrt/bin
