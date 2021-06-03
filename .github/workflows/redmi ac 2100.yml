@@ -103,5 +103,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt xiaomi redmi ac2100${{ env.FILE_DATE }}
+        name: OpenWrt xiaomi redmi ac2100
         path: openwrt/bin
